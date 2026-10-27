@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin – FoodExpress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div class="admin">
+  <aside class="sidebar">
+    <div class="brand-sm">🍔 Admin</div>
+    <button data-page="dashboard">📊 Dashboard</button>
+    <button data-page="foods">🍔 Food items</button>
+    <button data-page="orders">📦 Orders</button>
+    <button data-page="customers">👥 Customers</button>
+    <button data-page="notifications">🔔 Notifications</button>
+    <div class="grow"></div>
+    <button id="logoutBtn">🚪 Log out</button>
+  </aside>
+
+  <main class="admin-main">
+    <section class="admin-page" id="page-dashboard">
+      <h1>Dashboard</h1>
+      <div class="stats">
+        <div class="stat"><span>Customers</span><b id="sCustomers">0</b></div>
+        <div class="stat"><span>Orders</span><b id="sOrders">0</b></div>
+        <div class="stat"><span>Revenue</span><b id="sRevenue">₹0</b></div>
+        <div class="stat"><span>Notifications</span><b id="sNotes">0</b></div>
+      </div>
+      <h2 style="margin-bottom:12px">Recent orders</h2>
+      <div class="table-wrap" id="recent"></div>
+    </section>
+
+    <section class="admin-page hidden" id="page-foods">
+      <h1>Food items</h1>
+      <form class="add-form" id="addFood">
+        <label class="field"><span>Emoji</span><input id="fEmoji" placeholder="🍝" maxlength="4"></label>
+        <label class="field"><span>Dish name</span><input id="fName" required></label>
+        <label class="field"><span>Category</span><input id="fCat" placeholder="Pasta"></label>
+        <label class="field"><span>Price (₹)</span><input id="fPrice" type="number" min="1" required></label>
+        <label class="field"><span>Rating</span><input id="fRating" type="number" min="0" max="5" step="0.1" placeholder="4.5"></label>
+        <button class="btn" type="submit">Add dish</button>
+      </form>
+      <div class="table-wrap"><table>
+        <thead><tr><th></th><th>Dish</th><th>Category</th><th>Price</th><th>Rating</th><th>Menu</th><th></th></tr></thead>
+        <tbody id="foodRows"></tbody></table></div>
+    </section>
+
+    <section class="admin-page hidden" id="page-orders">
+      <h1>Customer orders</h1>
+      <p class="lead">Change the status and the customer sees it on their order page.</p>
+      <div class="table-wrap" id="orderBox"></div>
+    </section>
+
+    <section class="admin-page hidden" id="page-customers">
+      <h1>Registered customers</h1>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Name</th><th>Email</th><th>Address</th><th>Joined</th></tr></thead>
+        <tbody id="custRows"></tbody></table></div>
+    </section>
+
+    <section class="admin-page hidden" id="page-notifications">
+      <div class="toolbar"><h1 style="margin:0">Notifications</h1><button class="btn danger" id="clearNotes">Clear all</button></div>
+      <div id="noteBox"></div>
+    </section>
+  </main>
+</div>
+<script src="js/config.js"></script><script src="js/store.js"></script><script src="js/admin.js"></script>
+</body></html>

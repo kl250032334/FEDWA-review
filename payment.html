@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payment – FoodExpress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<main class="pay-wrap">
+  <div class="brand-sm" style="margin-bottom:18px">🍔 FoodExpress</div>
+
+  <div id="payForm" class="panel">
+    <h1 style="font-size:30px">Payment</h1>
+    <div class="amount"><small>Total to pay</small><div class="num" id="payAmount">₹0</div><small id="payItems"></small></div>
+
+    <h3>Choose how to pay</h3>
+    <label class="method" data-m="UPI"><input type="radio" name="pm"><span class="em">📱</span><b>UPI</b></label>
+    <div class="method-form hidden" id="upiForm">
+      <label class="field"><span>UPI ID</span><input id="upiId" placeholder="name@bank" autocomplete="off"></label>
+    </div>
+
+    <label class="method" data-m="Card"><input type="radio" name="pm"><span class="em">💳</span><b>Credit / debit card</b></label>
+    <div class="method-form hidden" id="cardForm">
+      <label class="field"><span>Card number</span><input id="cardNumber" inputmode="numeric" placeholder="1234 5678 9012 3456" autocomplete="off"></label>
+      <label class="field"><span>Name on card</span><input id="cardName" autocomplete="off"></label>
+      <div class="row">
+        <label class="field"><span>Expiry</span><input id="expiry" placeholder="MM/YY" inputmode="numeric" autocomplete="off"></label>
+        <label class="field"><span>CVV</span><input id="cvv" type="password" inputmode="numeric" autocomplete="off"></label>
+      </div>
+    </div>
+
+    <label class="method" data-m="Cash on Delivery"><input type="radio" name="pm"><span class="em">💵</span><b>Cash on delivery</b></label>
+
+    <button class="btn green block" id="payBtn" style="margin-top:18px">Pay and place order</button>
+    <button class="btn ghost block" id="backBtn" style="margin-top:10px">Back to cart</button>
+    <p class="note">This is a demo checkout. No real payment is taken and card details are never saved.</p>
+  </div>
+
+  <div id="done" class="panel empty hidden">
+    <div class="big">✅</div>
+    <h1 style="font-size:30px;margin:8px 0">Order placed!</h1>
+    <p>Your order ID is <b id="doneId"></b>. The kitchen has been notified.</p>
+    <a class="btn block" style="margin-top:22px;text-decoration:none" href="menu.html#orders">Track my order</a>
+  </div>
+</main>
+<script src="js/config.js"></script><script src="js/store.js"></script><script src="js/payment.js"></script>
+</body></html>

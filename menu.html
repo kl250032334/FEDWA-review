@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu – FoodExpress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<header class="topbar">
+  <div class="brand-sm">🍔 FoodExpress</div>
+  <div class="deliver">📍 Deliver to <b id="userAddress"></b></div>
+  <div class="spacer"></div>
+  <nav class="nav" aria-label="Main">
+    <button data-view="menu">Menu</button>
+    <button data-view="orders">My orders</button>
+    <button data-view="cart">Cart<span class="badge" id="cartBadge"></span></button>
+    <button id="logoutBtn">Log out</button>
+  </nav>
+</header>
+
+<main class="page">
+  <section class="view" id="view-menu">
+    <h1>Hi <span id="userName"></span>, what are you craving?</h1>
+    <p class="lead">Pick a dish and we'll get it to you hot.</p>
+    <input class="search" id="foodSearch" type="search" placeholder="Search dishes or categories" aria-label="Search dishes">
+    <div class="chips" id="chips"></div>
+    <div class="food-grid" id="foodGrid"></div>
+  </section>
+
+  <section class="view hidden" id="view-cart">
+    <h1>Your cart</h1><p class="lead">Review your items before paying.</p>
+    <div id="cartBox"></div>
+  </section>
+
+  <section class="view hidden" id="view-orders">
+    <h1>My orders</h1><p class="lead">Track every order from kitchen to doorstep.</p>
+    <div id="ordersBox"></div>
+  </section>
+</main>
+<script src="js/config.js"></script><script src="js/store.js"></script><script src="js/menu.js"></script>
+</body></html>

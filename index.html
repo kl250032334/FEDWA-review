@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FoodExpress – Hot food, fast delivery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<main class="auth">
+  <section class="auth-hero">
+    <div class="brand">🍔 FoodExpress</div>
+    <div>
+      <h1>Hungry? Dinner is on its way.</h1>
+      <p>Biryani, pizza, burgers and shawarma from your favourite kitchen, delivered hot to your door.</p>
+    </div>
+    <div class="hero-facts">
+      <div><b>6+</b>fresh dishes</div>
+      <div><b>₹40</b>flat delivery</div>
+      <div><b>3</b>ways to pay</div>
+    </div>
+    <div class="hero-emoji" aria-hidden="true">🍛</div>
+  </section>
+
+  <section class="auth-panel">
+    <div class="auth-box">
+      <form id="loginForm" novalidate>
+        <h2>Welcome back</h2>
+        <p class="sub">Log in to order your next meal.</p>
+        <label class="field"><span>Email</span><input type="email" id="loginEmail" autocomplete="email" required></label>
+        <label class="field"><span>Password</span><input type="password" id="loginPassword" autocomplete="current-password" required></label>
+        <button class="btn block" type="submit">Log in</button>
+        <p class="switch">New here? <button type="button" id="toSignup">Create an account</button></p>
+      </form>
+
+      <form id="signupForm" class="hidden" novalidate>
+        <h2>Create your account</h2>
+        <p class="sub">It takes less than a minute.</p>
+        <label class="field"><span>Full name</span><input type="text" id="signupName" autocomplete="name" required></label>
+        <label class="field"><span>Email</span><input type="email" id="signupEmail" autocomplete="email" required></label>
+        <div class="row">
+          <label class="field"><span>Password</span><input type="password" id="signupPassword" autocomplete="new-password" required></label>
+          <label class="field"><span>Confirm</span><input type="password" id="signupConfirm" autocomplete="new-password" required></label>
+        </div>
+        <label class="field"><span>Delivery address</span><textarea id="signupAddress" required></textarea></label>
+        <button class="btn block" type="submit">Create account</button>
+        <p class="switch">Already registered? <button type="button" id="toLogin">Log in</button></p>
+      </form>
+    </div>
+  </section>
+</main>
+<script src="js/config.js"></script><script src="js/store.js"></script><script src="js/auth.js"></script>
+</body></html>
